@@ -266,3 +266,45 @@ section h1 {
 .shop {
   background: rgb(248, 239, 221);
 }
+
+/********* SUB MENU *********/
+.shop-dropdown {
+  transition: display 0.9s;
+}
+.sub-menu {
+  display: grid;
+  grid-template-columns: 500px 1fr;
+  flex-direction: column;
+  position: absolute;
+  background-color: #3f403f;
+  top: 63px;
+  left: 0;
+  width: 100%;
+  padding: 30px 70px;
+}
+
+.sub-menu img {
+  width: 100%;
+  max-width: 400px;
+  margin: auto;
+  display: block;
+  padding: 20px 0;
+}
+
+.sub-menu-links {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+  justify-content: start;
+  margin: 40px 0;
+}
+
+.sub-menu-wrapper {
+  display: none;
+}
+
+.shop-dropdown:hover .sub-menu-wrapper {
+  display: block;
+}
