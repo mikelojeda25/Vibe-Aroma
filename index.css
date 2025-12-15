@@ -1,0 +1,268 @@
+@import url("https://fonts.googleapis.com/css2?family=Antonio:wght@100..700&family=Dancing+Script:wght@400..700&family=Great+Vibes&family=Jost:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #fdf8e6;
+}
+
+/********* BACKGROUND VIDEO *********/
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: -3;
+}
+
+.background div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.664);
+}
+
+.bg-video {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -2;
+}
+
+/********* HEADER & NAVIGATION *********/
+
+header {
+  position: fixed;
+  display: flex;
+  top: 0;
+  left: 0;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #3f403f50;
+  padding: 0 70px;
+  backdrop-filter: blur(5px);
+}
+
+header h1 {
+  font-family: "Antonio", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+  font-size: 40px;
+  color: white;
+}
+
+header h1:hover {
+  color: #bd5c39;
+  cursor: pointer;
+}
+
+nav {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+  padding: 10px;
+  font-size: 20px;
+  padding: 20px 20px;
+}
+
+nav a:hover {
+  background: #bd5c39;
+  color: white;
+}
+
+marquee {
+  margin-top: 80px;
+  font-size: 30px;
+  font-weight: bold;
+  color: red;
+}
+
+/********* INTRO SECTION *********/
+.intro {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+  flex-direction: column;
+  gap: 20px;
+  color: white;
+}
+
+.intro h2 {
+  font-family: "Antonio", sans-serif;
+  font-size: 4.5em;
+  letter-spacing: 20px;
+}
+
+.intro p {
+  font-size: 1.3em;
+  width: 80%;
+}
+
+.intro a {
+  margin-top: 160px;
+  text-decoration: none;
+  color: white;
+  border: 2px solid none;
+  padding: 10px 150px;
+  font-size: 1.2em;
+  background-color: #bd5c39;
+  transition: background-color 0.3s, border 0.3s;
+}
+
+.intro a:hover {
+  background: none;
+  border: 2px solid white;
+}
+
+/********* ABOUT SECTION *********/
+section h1 {
+  text-align: center;
+  font-family: "Antonio";
+  font-size: 3em;
+  margin-bottom: 60px;
+  color: #333333;
+  font-weight: 100;
+}
+
+.title {
+  font-family: "Jost", sans-serif;
+  margin: 0 0;
+  padding-top: 120px;
+  font-size: 5em;
+  color: #bd5c39;
+  font-weight: 200;
+  text-align: center;
+}
+
+.about {
+  background: white;
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+}
+
+.feature-1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 100px;
+  padding: 0 150px;
+}
+
+.feature-1 img {
+  width: 100%;
+  max-width: 400px;
+}
+
+.feature-description {
+  display: flex;
+  width: 100%;
+  max-width: 500px;
+  align-items: start;
+  flex-direction: column;
+  gap: 40px;
+}
+
+@media (max-width: 1000px) {
+  .feature-1 {
+    flex-direction: column;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .feature-description {
+    align-items: center;
+    text-align: center;
+  }
+}
+
+.feature-2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 100px;
+  padding: 0 150px;
+  flex-direction: row-reverse;
+}
+
+.feature-2 img {
+  width: 100%;
+  max-width: 400px;
+}
+
+.feature-description {
+  display: flex;
+  width: 100%;
+  max-width: 800px;
+  gap: 40px;
+}
+
+.feature-2 .feature-description {
+  display: flex;
+  width: 100%;
+  max-width: 800px;
+  align-items: end;
+  text-align: end;
+  gap: 40px;
+}
+
+.explore {
+  text-decoration: none;
+  color: white;
+  border: 2px solid none;
+  padding: 10px 60px;
+  font-size: 1.2em;
+  background-color: #bd5c39;
+  transition: background-color 0.09s, border 0.3s;
+}
+
+.explore:hover {
+  background: none;
+  border: 2px solid #bd5c39;
+  color: #bd5c39;
+}
+
+@media (max-width: 1000px) {
+  .feature-2 {
+    flex-direction: column;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .feature-2 .feature-description {
+    align-items: center;
+    text-align: center;
+  }
+}
+
+/********* DREAM SECTION *********/
+.dream {
+  background: rgb(248, 239, 221);
+}
+/********* CONTACT SECTION *********/
+.contact {
+  background: rgb(221, 248, 223);
+}
+/********* SHOP SECTION *********/
+.shop {
+  background: rgb(248, 239, 221);
+}
