@@ -53,6 +53,7 @@ header {
   background-color: #3f403f50;
   padding: 0 70px;
   backdrop-filter: blur(5px);
+  z-index: 100;
 }
 
 header h1 {
@@ -67,6 +68,28 @@ header h1:hover {
   cursor: pointer;
 }
 
+@media (max-width: 1000px) {
+  header {
+    flex-direction: column;
+    padding: 10px 20px;
+  }
+
+  header nav a {
+    padding: 10px;
+    font-size: 15px;
+  }
+
+  .sub-menu-wrapper .sub-menu img {
+    display: none;
+  }
+
+  .sub-menu-wrapper .sub-menu {
+    top: 120px;
+    padding: 0;
+    margin: 0;
+    display: block;
+  }
+}
 nav {
   display: flex;
   justify-content: end;
@@ -91,6 +114,48 @@ marquee {
   font-size: 30px;
   font-weight: bold;
   color: red;
+}
+
+/********* SUB MENU *********/
+.shop-dropdown {
+  transition: display 0.9s;
+}
+.sub-menu {
+  display: grid;
+  grid-template-columns: 500px 1fr;
+  flex-direction: column;
+  position: absolute;
+  background-color: #3f403f;
+  top: 60px;
+  left: 0;
+  width: 100%;
+  padding: 30px 70px;
+}
+
+.sub-menu img {
+  width: 100%;
+  max-width: 400px;
+  margin: auto;
+  display: block;
+  padding: 20px 0;
+}
+
+.sub-menu-links {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+  justify-content: start;
+  margin: 40px 0;
+}
+
+.sub-menu-wrapper {
+  display: none;
+}
+
+.shop-dropdown:hover .sub-menu-wrapper {
+  display: block;
 }
 
 /********* INTRO SECTION *********/
@@ -255,55 +320,226 @@ section h1 {
 
 /********* DREAM SECTION *********/
 .dream {
-  background: rgb(248, 239, 221);
-}
-/********* CONTACT SECTION *********/
-.contact {
-  background: rgb(221, 248, 223);
-}
-/********* SHOP SECTION *********/
-.shop {
-  background: rgb(248, 239, 221);
+  background-image: linear-gradient(rgb(252, 251, 251), rgb(243, 241, 230));
+  position: relative;
+  padding-bottom: 200px;
 }
 
-/********* SUB MENU *********/
-.shop-dropdown {
-  transition: display 0.9s;
-}
-.sub-menu {
-  display: grid;
-  grid-template-columns: 500px 1fr;
-  flex-direction: column;
-  position: absolute;
-  background-color: #3f403f;
-  top: 63px;
-  left: 0;
-  width: 100%;
-  padding: 30px 70px;
+.collection-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 300px;
+  margin-top: 50px;
 }
 
-.sub-menu img {
+@media (max-width: 1000px) {
+  .collection-wrapper {
+    flex-direction: column;
+    gap: 180px;
+    padding: 20px;
+  }
+}
+
+.collection-1 {
+  position: relative;
   width: 100%;
   max-width: 400px;
-  margin: auto;
-  display: block;
-  padding: 20px 0;
+  min-height: 500px;
 }
 
-.sub-menu-links {
+.collection-1 img {
   display: flex;
-  flex: 1;
-  flex-direction: column;
+  position: absolute;
+  width: 100%;
+}
+
+.collection-featured {
+  z-index: 20;
+}
+.collection-featured:hover {
+  transform: scale(1.3);
+  transition: transform 0.3s;
+  cursor: pointer;
+  z-index: 20;
+}
+
+.collection-background {
+  position: relative;
+  display: flex;
   justify-content: center;
+}
+
+.collection-background img {
+  position: absolute;
+  cursor: pointer;
+  height: 200px;
+  width: auto;
+  max-width: 100%;
+  max-height: fit-content;
+  margin-top: 120px;
+}
+
+.collection-1:hover .collection-background img:nth-child(1) {
+  margin: 200px 0 0 -400px;
+  transition: margin 0.3s;
+  transform: rotate(-20deg);
+  z-index: 4;
+  pointer-events: none;
+}
+
+.collection-1:hover .collection-background img:nth-child(2) {
+  margin: 200px 0 400px 400px;
+  transition: margin 0.3s;
+  transform: rotate(20deg);
+  z-index: 4;
+  pointer-events: none;
+}
+
+.collection-1:hover .collection-background img:nth-child(3) {
+  margin: 100px 0 0 -400px;
+  transition: margin 0.3s;
+  transform: rotate(-20deg);
+  z-index: 3;
+  pointer-events: none;
+}
+
+.collection-1:hover .collection-background img:nth-child(4) {
+  margin: 100px 0 400px 400px;
+  transition: margin 0.3s;
+  transform: rotate(20deg);
+  z-index: 3;
+  pointer-events: none;
+}
+
+.collection-1:hover .collection-background img:nth-child(5) {
+  margin: 20px 0 0 -350px;
+  transition: margin 0.3s;
+  transform: rotate(-20deg);
+  z-index: 2;
+  pointer-events: none;
+}
+
+.collection-1:hover .collection-background img:nth-child(6) {
+  margin: 20px 0 0 350px;
+  transition: margin 0.3s;
+  transform: rotate(20deg);
+  z-index: 1;
+  pointer-events: none;
+}
+.collection-1:hover .collection-background img:nth-child(7) {
+  margin: -40px 0 0 -200px;
+  transition: margin 0.3s;
+  transform: rotate(-20deg);
+  pointer-events: none;
+}
+
+.collection-1:hover .collection-background img:nth-child(8) {
+  margin: -40px 0 0px 200px;
+  transition: margin 0.3s;
+  transform: rotate(20deg);
+  pointer-events: none;
+}
+
+/********* CONTACT SECTION *********/
+.contact {
+  background: white;
+  padding-bottom: 80px;
+}
+
+.contact-content {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 100px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 50px 20px;
+}
+
+.contact-form-container,
+.contact-info {
+  width: 100%;
+  max-width: 450px;
+}
+
+.contact-content h3 {
+  font-family: "Antonio", sans-serif;
+  font-size: 2.2em;
+  color: #333;
+  margin-bottom: 30px;
+  font-weight: 300;
+  border-bottom: 2px solid #bd5c39;
+  padding-bottom: 10px;
+}
+
+/* --- Form Styling --- */
+.contact-form {
+  display: flex;
+  flex-direction: column;
   gap: 20px;
-  justify-content: start;
-  margin: 40px 0;
 }
 
-.sub-menu-wrapper {
-  display: none;
+.contact-form input,
+.contact-form textarea {
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1em;
+  font-family: "Jost", sans-serif;
+  transition: border-color 0.3s;
 }
 
-.shop-dropdown:hover .sub-menu-wrapper {
-  display: block;
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #bd5c39;
+  outline: none;
+  box-shadow: 0 0 5px rgba(189, 92, 57, 0.3);
+}
+
+.contact-form textarea {
+  resize: vertical;
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  gap: 15px;
+}
+
+.info-item i {
+  color: #bd5c39;
+  font-size: 1.5em;
+}
+
+.info-item p {
+  font-size: 1.1em;
+  color: #555;
+  font-family: "Jost", sans-serif;
+}
+
+/* --- Social Links --- */
+.social-links {
+  margin-top: 40px;
+  display: flex;
+  gap: 20px;
+}
+
+.social-links a {
+  color: #333;
+  font-size: 1.8em;
+  transition: color 0.3s;
+}
+
+.social-links a:hover {
+  color: #bd5c39;
+}
+@media (max-width: 900px) {
+  .contact-content {
+    flex-direction: column;
+    align-items: center;
+    gap: 60px;
+  }
 }
